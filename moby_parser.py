@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import sys
 
-colors = ['y', 'r', 'b']
+colors = ['r', 'b', 'y']
 chaps = 135
 
 def main():
@@ -66,18 +66,17 @@ def graph(wordcount, keywords):
     ind = np.arange(N)  # the x locations for the groups
     width = 0.3       # the width of the bars
 
+    # create bars
     fig, ax = plt.subplots()
     rects = []
     for i in range(0, len(wordcount)):
         rects.append(ax.bar(ind + i*width, wordcount[i], width, color=colors[i]));
 
+    # display legend and labels
     ax.set_ylabel('# Occurrences')
     ax.set_xlabel('Chapter')
     ax.set_title('Moby Dick Word Frequencies')
-    # ax.set_xticks(ind+width)
-    # ax.set_xticklabels( chap_labels )
 
-    # ax.legend( (rects1[0], rects2[0]), ('Men', 'Women') )
     if len(keywords) == 1:
         ax.legend(rects[0], keywords)
     if len(keywords) == 2:
