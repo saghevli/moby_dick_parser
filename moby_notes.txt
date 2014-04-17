@@ -1,0 +1,3 @@
+stemmer - cuts words to roots/stems
+nltk python
+
